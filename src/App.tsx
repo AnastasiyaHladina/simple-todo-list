@@ -30,10 +30,11 @@ export default function App() {
         setItems(filteredItems);
     }
 
-    const removeItem = (ind: number) => {
+    const removeItem = (ind: number, item: string) => {
         const filtered = items.filter((_, i) => ind !== i);
+        const filteredAllCollection = allCollectionItems.filter((el) => el !== item);
         setItems(filtered);
-        setAllCollectionItems(filtered);
+        setAllCollectionItems(filteredAllCollection);
     }
 
     const addInputChange = (event: ChangeEvent<HTMLInputElement>) => setInputAddItem(event.target.value);
